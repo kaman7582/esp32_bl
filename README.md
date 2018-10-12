@@ -6,4 +6,4 @@
 
 #step3: connect wifi to the gw
 
-#step4: download the one line audio stream and transfer to my bl headset
+#step4: download the on-line audio stream and transfer to my bl headset
