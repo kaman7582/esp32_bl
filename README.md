@@ -24,6 +24,7 @@ GATT client 主要就是干这些事情：
 
 扫描设备
 GAP Generic Access Profile
+GAP 使你的设备被其他设备可见，并决定了你的设备是否可以或者怎样与合同设备进行交互
 现在就是要处理各种连接，测试代码是clients连接到server
 建立连接
 
