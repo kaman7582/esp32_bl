@@ -18,7 +18,7 @@ ATT：属性协议层，ATT 环境中，允许设备向另外一个设备展示�
 GATT：通用属文件健配置层，从名字就能看出，GATT 是在 ATT 上面的一层结构，定义了使用 ATT的服务框架，GATT规定了配置文件（鼎鼎有名的 profile）的结构，在BLE中，所有被profile或者服务用到的数据块都称为“特性， characteristic”两个建立连接的设备之间的所有数据通信都是通过 GATT 子程序处理，应用程序和 profile 直接使用 GATT层，在后面具体的代码中，我们会经常见到 GATT，数据交互也是再GATT层。
 
 
---------------------- 
+--------------------- 相关各种知识
 
 GATT client 主要就是干这些事情：
 
@@ -26,6 +26,26 @@ GATT client 主要就是干这些事情：
 GAP Generic Access Profile
 GAP 使你的设备被其他设备可见，并决定了你的设备是否可以或者怎样与合同设备进行交互
 现在就是要处理各种连接，测试代码是clients连接到server
+
+These roles come under the GAP layer, which is responsible for the discovery and link connection between devices.
+Every single Bluetooth device has a unique 48-bit address, commonly abbreviated BD_ADDR
+
+在设备被发现阶段，设备的Class of device被提供出来。指出此设备是何种类型，以及支持哪些服务。
+
+回想前面ＨＣＩ章节所说，Inquiry时，会返回找到的设备信息，其中包括BDADDR等。其中dev_class字段就是Class of Device.
+
+
+
+Rssi和接收功率有关，单位是dBm，一般为负值，反应的是信号的衰减程度，理想状态下（无衰减），Rssi = 0dBm，实际情况是，即使蓝牙设备挨得非常近，Rssi也只有-50dBm的强度，在传输过程中，不可避免要损耗。
+一般情况下，经典蓝牙强度 
+-50 ~ 0dBm 信号强
+-70 ~-50dBm信号中
+<-70dBm      信号弱
+
+   UUID是“Universally Unique Identifier”的简称，通用唯一识别码的意思。对于蓝牙设备，每个服务都有通用、独立、唯一的UUID与之对应。也就是说，在同一时间、同一地点，不可能有两个相同的UUID标识的不同服务。
+   
+--------------------- 
+
 建立连接
 
 服务发现
