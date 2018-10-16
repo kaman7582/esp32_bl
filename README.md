@@ -23,8 +23,12 @@ GATT：通用属文件健配置层，从名字就能看出，GATT 是在 ATT 上
 GATT client 主要就是干这些事情：
 
 扫描设备
+GAP Generic Access Profile
+现在就是要处理各种连接，测试代码是clients连接到server
 建立连接
+
 服务发现
+
 数据传输
 
 
